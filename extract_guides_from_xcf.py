@@ -18,7 +18,7 @@ if __name__ == "__main__":
             last4bytes = ((last4bytes << 8) & 0x00000000FFFFFFFF) | int.from_bytes(nextbyte, "big") 
             
             if last4bytes == 18:
-                # PROP_GUIDES
+                # PROP_GUIDES, see documentation here: https://testing.developer.gimp.org/core/standards/xcf/
                 nb_bytes = int.from_bytes(f.read(4), "big")
                 if nb_bytes % 5 != 0:
                     print(f"Error: nb_bytes % 5 != 0 -> exiting")
